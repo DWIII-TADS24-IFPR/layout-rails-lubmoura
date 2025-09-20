@@ -1,24 +1,18 @@
-<p style="color: green"><%= notice %></p>
+<h1 class="text-3xl font-bold text-gray-700 mb-6">Posts</h1>
 
-<% content_for :title, "Posts" %>
-
-<h1>Posts</h1>
-
-
-<div id="posts">
+<div class="grid grid-cols-1 gap-6">
   <% @posts.each do |post| %>
-    <%= render post %>
-    <p>
-      <%= link_to "Show this post", post %>
-    </p>
+    <div class="bg-white rounded-2xl shadow-lg p-6">
+      <h2 class="text-xl font-semibold text-gray-700"><%= post.title %></h2>
+      <p class="text-gray-600 mt-2"><%= truncate(post.content, length: 150) %></p>
+      <div class="mt-4 flex justify-between">
+        <%= link_to "Show this post", post, class: "text-blue-600 hover:underline" %>
+        <%= link_to "Comments", post_comments_path(post), class: "text-purple-600 hover:underline" %>
+      </div>
+    </div>
   <% end %>
-
-<<<<<<< HEAD
-  <%= link_to "Comment", redirect_to Something_path, method: :get %>
-
-=======
-  <%= link_to "Comments", comments_path %>
->>>>>>> upstream/main
 </div>
 
-<%= link_to "New post", new_post_path %>
+<div class="mt-6">
+  <%= link_to "New post", new_post_path, class: "px-4 py-2 bg-gradient-to-r from-pink-300 via-purple-300 to-blue-300 text-white rounded-lg shadow-md hover:opacity-90 transition" %>
+</div>

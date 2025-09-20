@@ -1,21 +1,15 @@
-<div>
-
+<div class="w-full bg-white/50 rounded-2xl shadow-lg p-4 flex justify-between items-center mb-6">
+  <div>
     <% if admin_signed_in? %>
-        <%= current_admin.email %>
-    <% end%>
-    <ul>
-        <li>
-            <%= link_to "Home", root_path %>
-        </li>
+      <span class="font-semibold text-gray-700"><%= current_admin.email %></span>
+      <ul class="inline-flex space-x-4 ml-4">
+        <li><%= link_to "Home", root_path, class: "text-gray-600 hover:text-gray-800" %></li>
+        <li><%= link_to "Post", posts_path, class: "text-gray-600 hover:text-gray-800" %></li>
+        <li><%= link_to "Comment", comments_path, class: "text-gray-600 hover:text-gray-800" %></li>
+      </ul>
+    <% end %>
+  </div>
 
-        <li>
-            <%= link_to "Post", posts_path %>
-        </li>
-
-        <li>
-            <%= link_to "Comment", comments_path %>
-        </li>
-    </ul>
-
-    <%= link_to "Deslogar", destroy_admin_session_path, method: :delete, data: { turbo_method: :delete } %>
+  <%= link_to "Deslogar", destroy_admin_session_path, method: :delete,
+          class: "px-4 py-2 bg-gradient-to-r from-pink-300 via-purple-300 to-blue-300 text-white rounded-lg shadow-md hover:opacity-90 transition" %>
 </div>
