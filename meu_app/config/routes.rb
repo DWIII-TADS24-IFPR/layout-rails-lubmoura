@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :admins
 
  
-  resources :comments, only: [:index]
+  resources :comments
 
   
   resources :posts do
