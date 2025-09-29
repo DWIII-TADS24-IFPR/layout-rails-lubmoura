@@ -9,16 +9,6 @@
 #   end
 
   Post.create!([
-<<<<<<< HEAD
-    { title: "qualquer coisa", content: "varias coisas" }, 
-    { title: "sdss", content: "varias" }, 
-    { title: "rsid", content: "coisas" } 
-  ])
-
-  Comment.create!([
-    { content: "q legal", post_id: 1}
-  ])
-=======
     { title: "Laravel para sempre em tads?", content: "This is the content of the first post." },
     { title: "Joao vai trabalhar na prefeitura", content: "This is the content of the second post." },
     { title: "giovana saiu cedo", content: "This is the content of the third post." }
@@ -28,4 +18,3 @@
     Comment.create!([
       { content: "será??, ou RoR?", post_id: 1}
     ])
->>>>>>> upstream/main
